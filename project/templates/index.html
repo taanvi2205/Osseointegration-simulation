@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Osseointegration Simulator</title>
+</head>
+<body>
+    <h1>Simulate Bone Remodeling During Osseointegration</h1>
+    <form method="post">
+        <label for="bone_quality">Bone Quality and Density:</label>
+        <select name="bone_quality" required>
+            <option value="Poor">Poor</option>
+            <option value="Average">Average</option>
+            <option value="Good">Good</option>
+        </select><br><br>
+
+        <label for="patient_health">Patient Health:</label>
+        <select name="patient_health" required>
+            <option value="Compromised">Compromised</option>
+            <option value="Average">Average</option>
+            <option value="Healthy">Healthy</option>
+        </select><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" min="10" max="100" required><br><br>
+
+        <label for="implant_material">Implant Material:</label>
+        <select name="implant_material" required>
+            <option value="Stainless Steel">Stainless Steel</option>
+            <option value="Titanium">Titanium</option>
+            <option value="Zirconia">Zirconia</option>
+        </select><br><br>
+
+        <label for="surface_energy">Surface Energy and Wettability:</label>
+        <select name="surface_energy" required>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+        </select><br><br>
+
+        <label for="osteoblast_activity">Osteoblast Activity:</label>
+        <select name="osteoblast_activity" required>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+        </select><br><br>
+
+        <input type="submit" value="Run Simulation">
+    </form>
+
+    {% if plot_path %}
+        <h2>Simulation Result</h2>
+        <img src="{{ plot_path }}" alt="Bone Modulus Plot">
+    {% endif %}
+</body>
+</html>
